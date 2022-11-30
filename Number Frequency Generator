@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+int main() {
+    
+    int a=0,i,b,many;
+
+    printf("Enter How Many Numbers: ");
+    //Enter How Many Numbers You Want To Have an Occurrence Here
+    scanf("%d",&many); 
+    
+    int num[many],repeat[many];
+    
+    while(a<many){
+    printf("Enter Number: ");
+    scanf("%d",&num[a]);
+    printf("Enter Number Repeat: ");
+    scanf("%d",&repeat[a]);
+    a++;
+    }
+    printf("Numbers: \n");
+    for(b=0;b<many;b++){
+    for(i=0;i<repeat[b];i++){
+        printf("%d",num[b]);
+        if(i==repeat[b]-1){
+            break;
+        }
+        printf(",");
+    }
+    if(b==many-1){
+        break;
+    }
+     printf(",");
+    }
+    return 0;
+}
