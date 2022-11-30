@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+   
+    int num;
+    float mean;
+    float total=0;
+    int x,y,z;
+    
+    printf("Enter Number of X: ");
+    scanf("%d",&num);    
+    printf("Enter Mean: ");
+    scanf("%f",&mean);
+    
+    float x1[num],xdiff[num],xsq[num];
+    
+    for(z=0;z<num;z++){
+        
+        printf("Enter X: ");
+        scanf("%f",&x1[z]);
+        xdiff[z]=x1[z]-mean;
+        xsq[z]=xdiff[z]*xdiff[z];
+        total+=xsq[z];
+        
+    }
+    
+    printf("\n||=================================||");
+    printf("\nx   x - mean  (x - mean)^2\n");
+    
+    for(y=0;y<num;y++){
+        printf("%g    %g          %g\n",x1[y],xdiff[y],xsq[y]);
+    }
+    
+    printf("||=================================||");
+    
+    printf("\nTotal: %g",total);
+    double sd = total/(num-1);
+    printf("\nStandard Deviation: %lf",sqrt(sd));
+    
+    return 0;
+}
